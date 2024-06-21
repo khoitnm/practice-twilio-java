@@ -1,9 +1,8 @@
 package com.mycompany.myapp;  
   
 import com.twilio.Twilio;  
-import com.twilio.rest.conversations.v1.Conversation;  
-import com.twilio.rest.conversations.v1.service.ConversationCreator;  
-  
+import com.twilio.rest.conversations.v1.Conversation;
+
 import java.io.IOException;  
 import java.io.InputStream;  
 import java.util.Properties;  
