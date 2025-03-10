@@ -2,7 +2,7 @@ package com.mycompany.myapp;
 
 import com.mycompany.myapp.twilo.api.TwilioConversationSdk;
 import com.mycompany.myapp.twilo.api.bulkexport.ExportResourceTypeTwDto;
-import com.mycompany.myapp.twilo.api.bulkexport.download.TwilioJobStatusSdkV1;
+import com.mycompany.myapp.twilo.api.bulkexport.download.TwilioJobDownloadSdkV1;
 import com.mycompany.myapp.twilo.api.bulkexport.download.TwilioJobStatusSdkV2;
 import com.mycompany.myapp.twilo.api.bulkexport.job.JobListResponse;
 import com.mycompany.myapp.twilo.api.bulkexport.job.TwilioListJobsSdk;
@@ -25,8 +25,8 @@ public class ConversationCreatorApp {
 
 //        ExportJobStatusTwDto jobStatus = TwilioGetBulkExportJobSdk.getExportJobStatus(resourceType, "JSb954076a1c6797a5553b8dd9c85d1472");
 //        System.out.println("Job Status: " + jobStatus.toString());
-        String jobData = TwilioJobStatusSdkV1.downloadMessages( "JSb954076a1c6797a5553b8dd9c85d1472");
-        System.out.println("Job Status: " + jobData.toString());
+        String jobData = TwilioJobDownloadSdkV1.downloadMessages( jobSid);
+        System.out.println("Job Data: " + jobData.toString());
 
     }
 }  
