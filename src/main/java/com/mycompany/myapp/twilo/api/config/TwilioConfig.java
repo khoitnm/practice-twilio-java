@@ -1,4 +1,4 @@
-package com.mycompany.myapp.twilo.api;
+package com.mycompany.myapp.twilo.api.config;
 
 public class TwilioConfig {
     private String accountSid;

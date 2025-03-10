@@ -4,7 +4,7 @@ import com.twilio.http.TwilioRestClient;
 import com.twilio.rest.conversations.v1.Conversation;
 import com.twilio.rest.conversations.v1.conversation.Message;
 
-import static com.mycompany.myapp.twilo.api.TwilioConfigLoader.getClient;
+import static com.mycompany.myapp.twilo.api.config.TwilioConfigLoader.getClient;
 
 public class TwilioConversationSdk {
     public static void createConversations() {

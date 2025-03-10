@@ -1,4 +1,4 @@
-package com.mycompany.myapp.twilo.api;
+package com.mycompany.myapp.twilo.api.config;
 
 import com.mycompany.myapp.ConversationCreatorApp;
 import com.twilio.http.TwilioRestClient;
