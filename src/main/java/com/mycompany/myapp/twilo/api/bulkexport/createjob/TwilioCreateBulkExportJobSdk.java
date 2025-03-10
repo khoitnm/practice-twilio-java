@@ -31,6 +31,7 @@ public class TwilioCreateBulkExportJobSdk {
 
         try (CloseableHttpResponse response = httpClient.execute(httpPost)) {
             String jsonResponse = EntityUtils.toString(response.getEntity());
+            System.out.println("\tResponse: " + jsonResponse);
             ObjectMapper objectMapper = new ObjectMapper();
             return objectMapper.readValue(jsonResponse, ExportJobResponseTwDto.class);
         }
