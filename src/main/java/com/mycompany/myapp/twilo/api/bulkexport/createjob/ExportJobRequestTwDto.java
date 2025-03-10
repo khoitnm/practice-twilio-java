@@ -1,5 +1,6 @@
-package com.mycompany.myapp.twilo.api.bulkexport;
+package com.mycompany.myapp.twilo.api.bulkexport.createjob;
 
+import com.mycompany.myapp.twilo.api.bulkexport.ExportResourceTypeTwDto;
 import lombok.Builder;
 import lombok.Getter;
 

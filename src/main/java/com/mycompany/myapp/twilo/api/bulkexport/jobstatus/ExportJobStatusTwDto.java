@@ -1,4 +1,4 @@
-package com.mycompany.myapp.twilo.api.bulkexport;
+package com.mycompany.myapp.twilo.api.bulkexport.jobstatus;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

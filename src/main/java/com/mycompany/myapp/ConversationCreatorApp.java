@@ -1,9 +1,9 @@
 package com.mycompany.myapp;
 
 import com.mycompany.myapp.twilo.api.TwilioConversationSdk;
-import com.mycompany.myapp.twilo.api.bulkexport.ExportJobRequestTwDto;
+import com.mycompany.myapp.twilo.api.bulkexport.jobstatus.ExportJobStatusTwDto;
 import com.mycompany.myapp.twilo.api.bulkexport.ExportResourceTypeTwDto;
-import com.mycompany.myapp.twilo.api.bulkexport.TwilioBulkExportSdk;
+import com.mycompany.myapp.twilo.api.bulkexport.createjob.TwilioCreateBulkExportJobSdk;
 
 import java.io.IOException;
 
@@ -16,6 +16,7 @@ public class ConversationCreatorApp {
 //                .endDate("2025-03-08")
 //                .build());
 
-        TwilioBulkExportSdk.getExportJobStatus(ExportResourceTypeTwDto.Messages, "JSb954076a1c6797a5553b8dd9c85d1472");
+        ExportJobStatusTwDto jobStatus = TwilioCreateBulkExportJobSdk.getExportJobStatus(ExportResourceTypeTwDto.Messages, "JSb954076a1c6797a5553b8dd9c85d1472");
+        System.out.println("Job Status: " + jobStatus.toString());
     }
 }  
