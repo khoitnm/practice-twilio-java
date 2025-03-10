@@ -2,13 +2,7 @@ package com.mycompany.myapp.twilo.api.bulkexport.createjob;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mycompany.myapp.twilo.api.bulkexport.TwilioSdkHelper;
-import com.mycompany.myapp.twilo.api.bulkexport.jobstatus.ExportJobStatusTwDto;
-import com.mycompany.myapp.twilo.api.bulkexport.ExportResourceTypeTwDto;
-import com.mycompany.myapp.twilo.api.config.TwilioConfig;
-import com.mycompany.myapp.twilo.api.config.TwilioConfigLoader;
-import org.apache.http.HttpMessage;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
