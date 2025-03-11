@@ -3,6 +3,7 @@ package com.mycompany.myapp;
 import com.mycompany.myapp.twilo.api.TwilioConversationSdk;
 import com.mycompany.myapp.twilo.api.bulkexport.ExportResourceTypeTwDto;
 import com.mycompany.myapp.twilo.api.bulkexport.createjob.ExportJobRequestTwDto;
+import com.mycompany.myapp.twilo.api.bulkexport.createjob.ExportJobResponseTwDto;
 import com.mycompany.myapp.twilo.api.bulkexport.createjob.TwilioCreateBulkExportJobSdk;
 import com.mycompany.myapp.twilo.api.bulkexport.download.TwilioJobDownloadSdkV1;
 import com.mycompany.myapp.twilo.api.bulkexport.download.TwilioJobStatusSdkV2;
@@ -16,7 +17,7 @@ public class ConversationCreatorApp {
         ExportResourceTypeTwDto resourceType = ExportResourceTypeTwDto.Messages;
         TwilioConversationSdk.createConversations();
 
-        TwilioCreateBulkExportJobSdk.createExportJob(ExportJobRequestTwDto.builder()
+        ExportJobResponseTwDto job = TwilioCreateBulkExportJobSdk.createExportJob(ExportJobRequestTwDto.builder()
                 .resourceType(resourceType)
                 .startDate("2025-03-01")
                 .endDate("2025-03-09")
