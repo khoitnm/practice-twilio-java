@@ -9,6 +9,9 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 
+/**
+ * @deprecated Still doesn't work.
+ */
 @Deprecated
 public class TwilioJobDownloadSdkV1 {
 

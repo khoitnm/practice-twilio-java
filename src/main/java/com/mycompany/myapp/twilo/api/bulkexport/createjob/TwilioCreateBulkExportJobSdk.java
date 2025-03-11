@@ -16,7 +16,9 @@ public class TwilioCreateBulkExportJobSdk {
 
     private static final String BASE_URL = "https://bulkexports.twilio.com/v1/Exports";
 
-    public static ExportJobResponseTwDto createExportJob(String resourceType, String startDay, String endDay, String friendlyName) throws IOException {
+    public static ExportJobResponseTwDto createExportJob(
+            String resourceType, String startDay, String endDay, String friendlyName, String email
+    ) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(BASE_URL + "/" + resourceType + "/Jobs");
         TwilioSdkHelper.setHttpAuthorizationHeaders(httpPost);
@@ -24,9 +26,15 @@ public class TwilioCreateBulkExportJobSdk {
         httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
 
         String body = String.format(
-                "StartDay=%s&EndDay=%s&FriendlyName=%s",
-                startDay, endDay, friendlyName
+                "StartDay=%s&FriendlyName=%s",
+                startDay, friendlyName
         );
+        if (endDay != null) {
+            body += "&EndDay=" + endDay;
+        }
+        if (email != null) {
+            body += "&Email=" + email;
+        }
         httpPost.setEntity(new StringEntity(body));
 
         try (CloseableHttpResponse response = httpClient.execute(httpPost)) {
@@ -39,10 +47,14 @@ public class TwilioCreateBulkExportJobSdk {
 
     public static ExportJobResponseTwDto createExportJob(ExportJobRequestTwDto request) throws IOException {
         ExportJobResponseTwDto response = createExportJob(
-                request.getResourceType().toString(), request.getStartDate(), request.getEndDate(),
-                "JobTest_" + request.getStartDate() + "_" + request.getEndDate()
+                request.getResourceType().toString(),
+                request.getStartDate(),
+                request.getEndDate(),
+                "JobTest_" + request.getStartDate() + "_" + request.getEndDate(),
+                request.getEmail()
+
         );
-        System.out.println("Export Job: " + response.toString());
+        System.out.println("Created Export Job: " + response.toString());
         return response;
     }
 }

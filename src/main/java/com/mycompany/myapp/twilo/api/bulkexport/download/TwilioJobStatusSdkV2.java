@@ -9,6 +9,9 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 
+/**
+ * @deprecated Still doesn't work.
+ */
 @Deprecated
 public class TwilioJobStatusSdkV2 {
     private static final String BASE_URL = "https://api.twilio.com/2010-04-01/Accounts/";
